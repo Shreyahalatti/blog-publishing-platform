@@ -50,11 +50,12 @@ router.get("/", async (request, response, next) => {
         ...(query
           ? {
               OR: [
-                { title: { contains: query, mode: "insensitive" } },
-                { excerpt: { contains: query, mode: "insensitive" } },
-                { content: { contains: query, mode: "insensitive" } },
-                { category: { contains: query, mode: "insensitive" } },
-                { author: { name: { contains: query, mode: "insensitive" } } },
+                { title: { contains: query } },
+                { excerpt: { contains: query,  } },
+                { content: { contains: query, } },
+                { category: { contains: query,  } },
+                { author: { name: { contains: query,  } } },
+                
               ],
             }
           : {}),
